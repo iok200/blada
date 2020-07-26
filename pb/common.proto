@@ -1,0 +1,52 @@
+syntax = "proto3";
+package iok200.common;
+option go_package = "github.com/iok200/blada/pb";
+import "google/protobuf/timestamp.proto";
+
+// ID请求
+message IdRequest {
+    // ID
+    string id = 1;
+}
+// IDS请求
+message IdsRequest {
+    // ID
+    repeated string ids = 1;
+}
+
+// 结果状态
+// 如果code!=0,则为失败
+message ResultState {
+    // 所属服务
+    int32 service = 1;
+    // 错误码
+    int32 code = 2;
+    // 错误消息
+    string message = 3;
+}
+
+// 通用模型
+message Model {
+    // 主键
+    string id = 1;
+    // 创建时间
+    google.protobuf.Timestamp createTime = 2;
+    // 修改时间
+    google.protobuf.Timestamp updateTime = 3;
+    // 是否删除
+    bool softDelete = 4;
+}
+
+// 分页请求
+message PageRequest {
+    // 查询页码
+    int64 page = 1;
+    // 查询数量
+    int64 rows = 2;
+}
+
+// 分页结果
+message PageResult {
+    // 总数
+    int64 total = 1;
+}
