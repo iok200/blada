@@ -1,1 +1,1 @@
-protoc --go_out=plugins=grpc,paths=source_relative:./ ./common.proto
+protoc --go_out=plugins=grpc,paths=source_relative:./iok200_blada_pb/ ./common.proto
