@@ -1,6 +1,6 @@
 syntax = "proto3";
 package iok200.common;
-option go_package = "github.com/iok200/blada/pb";
+option go_package = "github.com/iok200/blada/blada-pb";
 import "google/protobuf/timestamp.proto";
 
 // ID请求
